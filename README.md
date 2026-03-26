@@ -38,6 +38,20 @@ Open:
 http://localhost:3011
 ```
 
+## Demo
+
+![Animated walkthrough of the STT bench UI](docs/assets/stt-bench-demo.gif)
+
+## Screenshots
+
+### Overview
+
+![STT Bench overview screen](docs/assets/stt-bench-overview.png)
+
+### Comparison Results
+
+![STT Bench comparison results](docs/assets/stt-bench-results.png)
+
 ## What It Does
 
 For each run, the app:
@@ -65,7 +79,6 @@ The progress bar in the UI is an estimate based on the selected runners and thei
 Runs the local FluidAudio CLI on macOS. By default the app looks for:
 
 - `STT_BENCH_FLUIDAUDIO_CLI_PATH`
-- `BOTNET_FLUIDAUDIO_CLI_PATH`
 - `/tmp/FluidAudio/.build/release/fluidaudiocli`
 
 Supported models in the UI:
@@ -79,7 +92,6 @@ Supported models in the UI:
 Runs the mainline `sherpa-onnx` Python path with the CoreML execution provider. By default the app looks for:
 
 - `STT_BENCH_SHERPA_PYTHON_PATH`
-- `BOTNET_SHERPA_PYTHON_PATH`
 - `/tmp/sherpa-py/bin/python`
 - `/tmp/sherpa-py/bin/python3`
 
@@ -93,7 +105,6 @@ Supported models in the UI:
 Runs the macOS Go adapter against the same sherpa model bundle and CoreML path. By default the app looks for:
 
 - `STT_BENCH_SHERPA_GO_REPO_PATH`
-- `BOTNET_SHERPA_GO_REPO_PATH`
 - `/tmp/sherpa-onnx-go-macos`
 
 Notes:
@@ -155,3 +166,7 @@ bun run build
 - This is a local benchmarking tool, not a hosted transcription service.
 - The browser recorder uses `MediaRecorder`, so the raw recorded file type depends on browser support.
 - The sherpa CoreML path can emit Apple/CoreML stderr noise such as `Context leak detected, CoreAnalytics returned false`. The app currently shows those lines instead of filtering them out.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

@@ -146,7 +146,6 @@ async function resolveBenchEnvironment(): Promise<BenchEnvironment> {
     ffprobePath: await resolveCommand('ffprobe'),
     fluidPath: await resolveFirstExisting([
       process.env.STT_BENCH_FLUIDAUDIO_CLI_PATH,
-      process.env.BOTNET_FLUIDAUDIO_CLI_PATH,
       '/tmp/FluidAudio/.build/release/fluidaudiocli',
     ]),
     fluidModelCacheRoot: path.join(
@@ -160,13 +159,11 @@ async function resolveBenchEnvironment(): Promise<BenchEnvironment> {
     sherpaGoBinaryPath: path.join(tempRoot, 'sherpa-go-bench'),
     sherpaGoRepoPath: await resolveFirstExisting([
       process.env.STT_BENCH_SHERPA_GO_REPO_PATH,
-      process.env.BOTNET_SHERPA_GO_REPO_PATH,
       '/tmp/sherpa-onnx-go-macos',
     ]),
     sherpaModelCacheRoot: path.join(tempRoot, 'models'),
     sherpaPythonPath: await resolveFirstExisting([
       process.env.STT_BENCH_SHERPA_PYTHON_PATH,
-      process.env.BOTNET_SHERPA_PYTHON_PATH,
       '/tmp/sherpa-py/bin/python',
       '/tmp/sherpa-py/bin/python3',
     ]),

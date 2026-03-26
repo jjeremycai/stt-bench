@@ -726,11 +726,12 @@ export function SttBenchClient() {
                         checked={config.enabled}
                         disabled={!runner?.available || isRunning}
                         onChange={(event) => {
+                          const enabled = event.currentTarget.checked
                           setRunConfig((current) => ({
                             ...current,
                             [method]: {
                               ...current[method],
-                              enabled: event.currentTarget.checked,
+                              enabled,
                             },
                           }))
                         }}
@@ -747,11 +748,12 @@ export function SttBenchClient() {
                         value={config.model}
                         disabled={!runner?.available || isRunning}
                         onChange={(event) => {
+                          const model = event.currentTarget.value
                           setRunConfig((current) => ({
                             ...current,
                             [method]: {
                               ...current[method],
-                              model: event.currentTarget.value,
+                              model,
                             },
                           }))
                         }}
